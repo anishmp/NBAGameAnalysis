@@ -1,0 +1,12 @@
+import requests
+import bs4
+
+res = requests.get('https://nba.com')
+type(res)
+#print(res.text)
+
+soup = bs4.BeautifulSoup(res.text, 'lxml')
+type(soup)
+
+links = soup.select("link")
+print(links[0])

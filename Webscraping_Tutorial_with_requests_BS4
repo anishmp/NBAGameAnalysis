@@ -14,7 +14,4 @@ print(titlewebpage)
 
 html = list(soup.children)[1]
 
-print(soup.find_all("table"))
-
-
-
+print(soup.find_all("table", id="tot"))

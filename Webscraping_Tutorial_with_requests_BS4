@@ -14,4 +14,18 @@ print(titlewebpage)
 
 html = list(soup.children)[1]
 
-print(soup.find_all("table", id="tot"))
+
+data = [
+    [
+        [td.string for td in tr.find_all('td') ] 
+        for tr in table.find_all('tr')[1:]
+    ] 
+    for table in soup.find_all('table', id="tot")
+]
+
+print(data)
+
+#for row in table:
+#	print(row.type)
+
+

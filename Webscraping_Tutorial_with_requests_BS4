@@ -12,20 +12,43 @@ links = soup.select("link")
 titlewebpage = soup.title.string
 print(titlewebpage)
 
-html = list(soup.children)[1]
-
-
-data = [
+rank = [
     [
-        [td.string for td in tr.find_all('td') ] 
+        [td.string.strip() for td in tr.find_all('td')[0]] 
         for tr in table.find_all('tr')[1:]
     ] 
     for table in soup.find_all('table', id="tot")
 ]
 
-print(data)
+points = [
+    [
+        [td.string.strip() for td in tr.find_all('td')[2]] 
+        for tr in table.find_all('tr')[1:]
+    ] 
+    for table in soup.find_all('table', id="tot")
+]
 
-#for row in table:
-#	print(row.type)
+#playerName = [
+#   [
+#        [
+#        	[a.string for a in td.find_all('a')]
+#        	for td in tr.find_all('td')
+#        ]
+#        for tr in table.find_all('tr')[1:]
+#    ] 
+#    for table in soup.find_all('table', id="tot")
+#]
 
+
+print(rank)
+print("    ")
+print("    ")
+print("    ")
+print("    ")
+print(points)
+print("    ")
+print("    ")
+print("    ")
+print("    ")
+#print(playerNames)
 

@@ -28,16 +28,10 @@ points = [
     for table in soup.find_all('table', id="tot")
 ]
 
-#playerName = [
-#   [
-#        [
-#        	[a.string for a in td.find_all('a')]
-#        	for td in tr.find_all('td')
-#        ]
-#        for tr in table.find_all('tr')[1:]
-#    ] 
-#    for table in soup.find_all('table', id="tot")
-#]
+playertab = soup.find('table', id="tot")
+playerNames = [
+	[a.string.strip() for a in playertab.find_all('a')]
+]
 
 
 print(rank)
@@ -50,5 +44,5 @@ print("    ")
 print("    ")
 print("    ")
 print("    ")
-#print(playerNames)
+print(playerNames)
 
